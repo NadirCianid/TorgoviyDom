@@ -38,7 +38,7 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="agreem" onAction="#agreementTF" prefHeight="25.0" prefWidth="234.0" promptText="АБ1234567891234567" />
+            <TextField fx:id="agreementTF" onAction="#agreementTF" prefHeight="25.0" prefWidth="234.0" promptText="АБ1234567891234567" />
          </children>
       </HBox>
       <Button fx:id="nextPageButton" layoutX="296.0" layoutY="355.0" mnemonicParsing="false" onAction="#nextPage" text="Продолжить">

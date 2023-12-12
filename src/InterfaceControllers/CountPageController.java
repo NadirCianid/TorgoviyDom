@@ -23,4 +23,6 @@ public class CountPageController {
     @FXML
     private Label totalMoneyAmountLabel;
 
+    public void init() {
+    }
 }

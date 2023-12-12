@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="01d6dd61-daf3-4cfe-bd96-753d8ba228a9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TorgoviyDom.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/InterfaceControllers/BasketPageController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/InterfaceControllers/CountPageController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/InterfaceControllers/LogInPageController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/InterfaceControllers/MainPageController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/InterfaceControllers/StartPoint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fxmls/basketPage.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fxmls/countPage.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fxmls/logInPage.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fxmls/mainPage.fxml" afterDir="false" />
+    <list default="true" id="01d6dd61-daf3-4cfe-bd96-753d8ba228a9" name="Changes" comment="Создал проект, и скелет интерфейса.">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/backend/Agreement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/backend/Basket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/backend/Category.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/backend/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/backend/Position.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/backend/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/backend/Shipment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/backend/WarehouseController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/backend/test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfaceControllers/BasketPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InterfaceControllers/BasketPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfaceControllers/CountPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InterfaceControllers/CountPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfaceControllers/LogInPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InterfaceControllers/LogInPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfaceControllers/MainPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InterfaceControllers/MainPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfaceControllers/StartPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InterfaceControllers/StartPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fxmls/logInPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/fxmls/logInPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fxmls/mainPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/fxmls/mainPage.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,23 +46,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Program Files/Java/javafx-sdk-20.0.2/lib&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Program Files/Java/javafx-sdk-20.0.2/lib",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="InterfaceControllers" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.InterfaceControllers.StartPoint">
     <configuration name="InterfaceControllers.StartPoint" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="InterfaceControllers.StartPoint" />
       <module name="TorgoviyDom" />
@@ -74,9 +78,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="backend.test" />
+      <module name="TorgoviyDom" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="backend.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.test" />
+      <item itemvalue="Application.InterfaceControllers.StartPoint" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.InterfaceControllers.StartPoint" />
+        <item itemvalue="Application.test" />
       </list>
     </recent_temporary>
   </component>
@@ -89,8 +111,16 @@
       <option name="presentableId" value="Default" />
       <updated>1702326894776</updated>
       <workItem from="1702326899857" duration="4043000" />
-      <workItem from="1702372141597" duration="281000" />
+      <workItem from="1702372141597" duration="5193000" />
     </task>
+    <task id="LOCAL-00001" summary="Создал проект, и скелет интерфейса.">
+      <created>1702372682555</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1702372682555</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -106,5 +136,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Создал проект, и скелет интерфейса." />
+    <option name="LAST_COMMIT_MESSAGE" value="Создал проект, и скелет интерфейса." />
   </component>
 </project>
