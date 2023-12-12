@@ -1,21 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="01d6dd61-daf3-4cfe-bd96-753d8ba228a9" name="Changes" comment="Исправил ошибку на маке">
+    <list default="true" id="01d6dd61-daf3-4cfe-bd96-753d8ba228a9" name="Changes" comment="Настроил работу корзины">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InterfaceControllers/BasketPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InterfaceControllers/BasketPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InterfaceControllers/LogInPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InterfaceControllers/LogInPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InterfaceControllers/MainPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InterfaceControllers/MainPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InterfaceControllers/StartPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InterfaceControllers/StartPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backend/Basket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/Basket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backend/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backend/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backend/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/Position.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backend/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backend/WarehouseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/WarehouseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fxmls/basketPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/fxmls/basketPage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fxmls/mainPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/fxmls/mainPage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fxmls/messagePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/fxmls/messagePage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfaceControllers/CountPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InterfaceControllers/CountPageController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +95,7 @@
       <option name="presentableId" value="Default" />
       <updated>1702326894776</updated>
       <workItem from="1702326899857" duration="4043000" />
-      <workItem from="1702372141597" duration="24677000" />
+      <workItem from="1702372141597" duration="25287000" />
     </task>
     <task id="LOCAL-00001" summary="Создал проект, и скелет интерфейса.">
       <created>1702372682555</created>
@@ -137,7 +125,14 @@
       <option name="project" value="LOCAL" />
       <updated>1702406885508</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Настроил работу корзины">
+      <created>1702416635210</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1702416635210</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -159,6 +154,7 @@
     <MESSAGE value="Упростил переход между страницами. &#10;Начал писать бэк" />
     <MESSAGE value="Написал логику страницы входа.&#10;Написал логику инициализации главной страницы, а также логику фильтрации по категории товара." />
     <MESSAGE value="Исправил ошибку на маке" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправил ошибку на маке" />
+    <MESSAGE value="Настроил работу корзины" />
+    <option name="LAST_COMMIT_MESSAGE" value="Настроил работу корзины" />
   </component>
 </project>
