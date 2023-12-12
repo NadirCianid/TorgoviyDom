@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="InterfaceControllers.BasketPageController">
+   <children>
+      <Label layoutX="57.0" layoutY="50.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" text="ООО &quot;ДЕЛИВЕРИ КОФ&quot; ">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="303.0" layoutY="50.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="25.0" text="Ваш надежный партнер в кофейном бизнесе">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="522.0" layoutY="431.0" mnemonicParsing="false" onAction="#toNextPage" text="Оформить">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Label fx:id="totalLabel" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="278.0" layoutY="431.0" prefHeight="30.0" prefWidth="230.0" text="Итого: 10_000_000 Р">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TableView fx:id="productsTableView" layoutX="57.0" layoutY="128.0" prefHeight="288.0" prefWidth="620.0">
+         <columns>
+            <TableColumn fx:id="productNameTC" prefWidth="340.0" text="Товары и услуги" />
+            <TableColumn fx:id="priceTC" prefWidth="110.0" text="Цена Р" />
+            <TableColumn fx:id="costTC" prefWidth="120.0" text="Стоимость Р" />
+            <TableColumn fx:id="amountTC" prefWidth="49.0" text="Кол-во" />
+         </columns>
+      </TableView>
+      <Label fx:id="clientNameLabel" layoutX="57.0" layoutY="94.0" prefHeight="17.0" prefWidth="274.0" text="Заказчик: Иванов Иван Иванович" />
+      <Label fx:id="clientCompanyLabel" layoutX="385.0" layoutY="94.0" prefHeight="17.0" prefWidth="274.0" text="Юр. лицо: ИП &quot;Варим кофе для вас&quot;" />
+      <Button layoutX="151.0" layoutY="432.0" mnemonicParsing="false" onAction="#oneLess" prefHeight="30.0" prefWidth="30.0" text="-">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="189.0" layoutY="431.0" mnemonicParsing="false" onAction="#oneMore" prefHeight="30.0" prefWidth="30.0" text="+">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="57.0" layoutY="431.0" mnemonicParsing="false" onAction="#deleteFromBusket" prefHeight="30.0" prefWidth="83.0" text="Удалить">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="620.0" layoutY="430.0" mnemonicParsing="false" onAction="#toMainPage" text="Назад">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
