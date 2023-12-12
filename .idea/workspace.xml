@@ -1,21 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="01d6dd61-daf3-4cfe-bd96-753d8ba228a9" name="Changes" comment="Упростил переход между страницами. &#10;Начал писать бэк">
-      <change afterPath="$PROJECT_DIR$/src/backend/CompaniesController.java" afterDir="false" />
+    <list default="true" id="01d6dd61-daf3-4cfe-bd96-753d8ba228a9" name="Changes" comment="Написал логику страницы входа.&#10;Написал логику инициализации главной страницы, а также логику фильтрации по категории товара.">
+      <change afterPath="$PROJECT_DIR$/src/InterfaceControllers/MessagePageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fxmls/messagePage.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InterfaceControllers/BasketPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InterfaceControllers/BasketPageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/InterfaceControllers/LogInPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InterfaceControllers/LogInPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InterfaceControllers/MainPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InterfaceControllers/MainPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InterfaceControllers/StartPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InterfaceControllers/StartPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backend/Agreement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/Agreement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backend/Basket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/Basket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backend/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backend/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backend/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/Position.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backend/WarehouseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/WarehouseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fxmls/logInPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/fxmls/logInPage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fxmls/mainPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/fxmls/mainPage.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +97,7 @@
       <option name="presentableId" value="Default" />
       <updated>1702326894776</updated>
       <workItem from="1702326899857" duration="4043000" />
-      <workItem from="1702372141597" duration="13958000" />
+      <workItem from="1702372141597" duration="16197000" />
     </task>
     <task id="LOCAL-00001" summary="Создал проект, и скелет интерфейса.">
       <created>1702372682555</created>
@@ -123,7 +113,14 @@
       <option name="project" value="LOCAL" />
       <updated>1702392843186</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Написал логику страницы входа.&#10;Написал логику инициализации главной страницы, а также логику фильтрации по категории товара.">
+      <created>1702401726936</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1702401726936</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -143,6 +140,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Создал проект, и скелет интерфейса." />
     <MESSAGE value="Упростил переход между страницами. &#10;Начал писать бэк" />
-    <option name="LAST_COMMIT_MESSAGE" value="Упростил переход между страницами. &#10;Начал писать бэк" />
+    <MESSAGE value="Написал логику страницы входа.&#10;Написал логику инициализации главной страницы, а также логику фильтрации по категории товара." />
+    <option name="LAST_COMMIT_MESSAGE" value="Написал логику страницы входа.&#10;Написал логику инициализации главной страницы, а также логику фильтрации по категории товара." />
   </component>
 </project>

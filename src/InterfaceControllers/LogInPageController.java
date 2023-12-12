@@ -5,9 +5,13 @@ import backend.Client;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
 
 import javax.swing.*;
 import java.io.IOException;
@@ -57,10 +61,9 @@ public class LogInPageController {
 
         Agreement agreement = companiesController.searchAgreement(agreementNumber);
         if(agreement == null) {
-            JOptionPane.showMessageDialog(null,
-                    "Не найден введенный договор. Проверьте введенные данные.",
-                    "Нет такого договора в базе.",
-                    JOptionPane.INFORMATION_MESSAGE);
+            openSecondWindow("Не найден введенный договор. Проверьте введенные данные.",
+                    "Нет такого договора в базе.");
+
             return;
         }
 
@@ -91,10 +94,8 @@ public class LogInPageController {
     private boolean validateAgreementNumber(String agreementNumber) {
         // Проверка формата номера договора (две буквы кирилицы в верхнем регистре и 16 цифр)
         if (!Pattern.matches("^[А-ЯЁ]{2}\\d{16}$", agreementNumber)) {
-            JOptionPane.showMessageDialog(null,
-                    "Неправильный формат номера договора. Проверьте введенные данные.",
-                    "Ошибка формата введенных данных.",
-                    JOptionPane.INFORMATION_MESSAGE);
+            openSecondWindow("Неправильный формат номера договора. Проверьте введенные данные.",
+                    "Ошибка формата введенных данных.");
 
             return false;  // Недопустимый формат
         }
@@ -103,13 +104,32 @@ public class LogInPageController {
         return true;
     }
 
-    public static boolean validateFio(String inputString) {
+    private void openSecondWindow(String messageText, String messageTitle) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("..//fxmls//messagePage.fxml"));
+        Parent root = null;
+        try {
+            root = loader.load();
+        } catch (IOException e) {
+            System.out.println("Ошибка загрузки FXMLLoader");
+        }
+
+        Stage secondStage = new Stage();
+        secondStage.setTitle("Second Window");
+        secondStage.setScene(new Scene(root));
+
+        // Получение контроллера второго окна
+        MessagePageController controller = loader.getController();
+
+        controller.setMessage(messageText, messageTitle);
+
+        secondStage.show();
+    }
+
+    public boolean validateFio(String inputString) {
         // Проверка допустимых символов (только буквы, пробелы и дефисы)
         if (!Pattern.matches("^[а-яА-ЯЁё\\s\\-]+$", inputString)) {
-            JOptionPane.showMessageDialog(null,
-                    "Неправильный формат ФИО. Проверьте введенные данные.",
-                    "Ошибка формата введенных данных.",
-                    JOptionPane.INFORMATION_MESSAGE);
+            openSecondWindow("Неправильный формат ФИО. Проверьте введенные данные.",
+                    "Ошибка формата введенных данных.");
 
             return false;  // Недопустимые символы
         }
@@ -117,10 +137,8 @@ public class LogInPageController {
         // Проверка количества слов (требуется три слова)
         String[] words = inputString.split("\\s+");
         if (words.length < 3) {
-            JOptionPane.showMessageDialog(null,
-                    "ФИО должно содержать минимум 3 слова. Проверьте введенные данные.",
-                    "Ошибка формата введенных данных.",
-                    JOptionPane.INFORMATION_MESSAGE);
+            openSecondWindow("ФИО должно содержать минимум 3 слова. Проверьте введенные данные.",
+                    "Ошибка формата введенных данных.");
 
             return false;  // Недопустимое количество слов
         }
@@ -128,10 +146,8 @@ public class LogInPageController {
         // Проверка каждого слова на начальную заглавную букву
         for (String word : words) {
             if (!Character.isUpperCase(word.charAt(0))) {
-                JOptionPane.showMessageDialog(null,
-                        "Слова в ФИО должны начинаться с заглавной буквы. Проверьте введенные данные.",
-                        "Ошибка формата введенных данных.",
-                        JOptionPane.INFORMATION_MESSAGE);
+                openSecondWindow("Слова в ФИО должны начинаться с заглавной буквы. Проверьте введенные данные.",
+                        "Ошибка формата введенных данных.");
 
                 return false;  // Начальная буква слова не является заглавной
             }
@@ -141,10 +157,8 @@ public class LogInPageController {
         int minLength = 10;
         int maxLength = 100;
         if (!(inputString.length() >= minLength && inputString.length() <= maxLength)) {
-            JOptionPane.showMessageDialog(null,
-                    "ФИО либо слишком короткое или слишком длинное. Проверьте введенные данные.",
-                    "Ошибка формата введенных данных.",
-                    JOptionPane.INFORMATION_MESSAGE);
+            openSecondWindow("ФИО либо слишком короткое или слишком длинное. Проверьте введенные данные.",
+                    "Ошибка формата введенных данных.");
 
             return false;  // Недопустимая длина
         }
