@@ -62,7 +62,7 @@ public class BasketPageController {
         }
 
         MainPageController mainPageController = fxmlLoader.getController();
-        mainPageController.init();
+        mainPageController.init(null);
     }
 
 

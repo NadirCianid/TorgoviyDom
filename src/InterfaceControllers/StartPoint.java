@@ -1,5 +1,8 @@
 package InterfaceControllers;
 
+import backend.Client;
+import backend.CompaniesController;
+import backend.WarehouseController;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -12,12 +15,19 @@ import java.io.IOException;
 import java.util.Objects;
 
 public class StartPoint extends Application {
+    public static Client currentClient;
+    public static CompaniesController companiesController = new CompaniesController();
+    public static WarehouseController warehouseController = new WarehouseController();
+
     @Override
     public void start(Stage stage) throws IOException {
         //Получение FXMLLoader объекта  для перехода к новой сцене и доступа к котроллеру этой сцены
         FXMLLoader fxmlLoader = new FXMLLoader(Objects.requireNonNull(getClass().getResource("..//fxmls//logInPage.fxml")));
 
         prepareNewStage(stage, fxmlLoader);
+
+        companiesController.fillAgreementList();
+        warehouseController.fillWarehouse();
 
         LogInPageController logInPageController = fxmlLoader.getController();
     }

@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="InterfaceControllers.LogInPageController">
    <children>
       <Label layoutX="50.0" layoutY="50.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" text="ООО &quot;ДЕЛИВЕРИ КОФ&quot; ">
@@ -38,14 +37,14 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="agreementTF" onAction="#agreementTF" prefHeight="25.0" prefWidth="234.0" promptText="АБ1234567891234567" />
+            <TextField fx:id="agreementNumberTF" prefHeight="25.0" prefWidth="234.0" promptText="АБ1234567891234567" />
          </children>
       </HBox>
-      <Button fx:id="nextPageButton" layoutX="296.0" layoutY="355.0" mnemonicParsing="false" onAction="#nextPage" text="Продолжить">
+      <Button fx:id="nextPageButton" disable="true" layoutX="296.0" layoutY="355.0" mnemonicParsing="false" onAction="#nextPage" text="Продолжить">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <CheckBox fx:id="importantCheckBox" layoutX="155.0" layoutY="258.0" mnemonicParsing="false" text="Продолжая я подтверждаю, что являюсь работником данного юр. лица." />
+      <CheckBox fx:id="importantCheckBox" layoutX="155.0" layoutY="258.0" mnemonicParsing="false" onAction="#acceptEverything" text="Продолжая я подтверждаю, что являюсь работником данного юр. лица." />
    </children>
 </AnchorPane>

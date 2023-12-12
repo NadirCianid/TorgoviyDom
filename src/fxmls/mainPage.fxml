@@ -21,12 +21,12 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="toBusketButton" layoutX="627.0" layoutY="430.0" mnemonicParsing="false" onAction="#toBasket" text="Корзина">
+      <Button fx:id="toBasketButton" layoutX="627.0" layoutY="430.0" mnemonicParsing="false" onAction="#toBasket" text="Корзина">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Label fx:id="busketConditionLabel" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="385.0" layoutY="435.0" prefHeight="20.0" prefWidth="230.0" text="99 позиций на сумму 10_000_000 Р">
+      <Label fx:id="basketConditionLabel" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="385.0" layoutY="435.0" prefHeight="20.0" prefWidth="230.0" text="0 позиций на сумму 0 Р">
          <font>
             <Font size="14.0" />
          </font>
@@ -40,12 +40,13 @@
       <Separator layoutX="367.0" layoutY="431.0" orientation="VERTICAL" prefHeight="30.0" prefWidth="24.0" />
       <TableView fx:id="productsTableView" layoutX="57.0" layoutY="128.0" prefHeight="288.0" prefWidth="620.0">
         <columns>
-          <TableColumn fx:id="productNameTC" prefWidth="490.0" text="Товары и услуги" />
-          <TableColumn fx:id="priceTC" prefWidth="129.0" text="Цена Р" />
+          <TableColumn fx:id="nameTC" prefWidth="449.0" text="Товары и услуги" />
+          <TableColumn fx:id="amountTC" prefWidth="68.0" text="Кол-во шт." />
+            <TableColumn fx:id="priceTC" prefWidth="102.0" text="Цена Р" />
         </columns>
       </TableView>
       <ChoiceBox fx:id="productAmountCB" layoutX="204.0" layoutY="430.0" prefHeight="30.0" prefWidth="80.0" />
-      <Button layoutX="57.0" layoutY="430.0" mnemonicParsing="false" onAction="#addToBusket" prefHeight="30.0" prefWidth="140.0" text="Добавить в козину">
+      <Button layoutX="57.0" layoutY="430.0" mnemonicParsing="false" onAction="#addToBasket" prefHeight="30.0" prefWidth="140.0" text="Добавить в козину">
          <font>
             <Font size="14.0" />
          </font>
