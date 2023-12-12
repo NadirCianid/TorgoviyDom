@@ -11,12 +11,12 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
 import java.util.Objects;
 
-import static InterfaceControllers.StartPoint.loadNewStage;
-import static InterfaceControllers.StartPoint.warehouseController;
+import static InterfaceControllers.StartPoint.*;
 
 public class MainPageController {
     @FXML
@@ -35,7 +35,7 @@ public class MainPageController {
     private TableColumn<Product, Integer> priceTC;
 
     @FXML
-    private ChoiceBox<?> productAmountCB;
+    private ChoiceBox<Integer> productAmountCB;
 
     @FXML
     private TableView<Product> productsTableView;
@@ -46,13 +46,22 @@ public class MainPageController {
 
     @FXML
     void addToBasket(ActionEvent event) {
+        Integer amountToBeAdded = productAmountCB.getValue();
+        Product productToBeAdded = productsTableView.getSelectionModel().getSelectedItem();
+        if(amountToBeAdded == null || productToBeAdded == null) {
+            return;
+        }
 
+        boolean addingResult = currentClient.basket.addProductInBasket(productToBeAdded, amountToBeAdded);
+        updatePage(event, categoryToBeDisplayed);
     }
 
     @FXML
     void toBasket(ActionEvent event) {
         FXMLLoader fxmlLoader = new FXMLLoader(Objects.requireNonNull(getClass().getResource("..//fxmls//basketPage.fxml")));
-        if(basketIsEmpty()) {
+        if(currentClient.basket.basketIsEmpty()) {
+            StartPoint.openSecondWindow("Ваша корзина пуста. Добавьте хотя бы один товар, чтобы перейти в корзину.",
+                    "You shall not pass!");
             return;
         }
 
@@ -79,15 +88,32 @@ public class MainPageController {
 
         MainPageController mainPageController = fxmlLoader.getController();
         mainPageController.init(categoryToBeDisplayed);
+        mainPageController.categoryToBeDisplayed = categoryToBeDisplayed;
     }
 
-    private boolean basketIsEmpty() {
-        return false;
+    @FXML
+    void setAmountAddingVariants(MouseEvent event) {
+        Product product = productsTableView.getSelectionModel().getSelectedItem();
+
+        if(product == null) {
+            return;
+        }
+
+        productAmountCB.getItems().clear();
+        productAmountCB.setItems(product.getPossibleAmounts());
     }
 
     public void init(Category categoryToBeDisplayed) {
         fillProductsTableView(categoryToBeDisplayed);
         setCatalogCB();
+        setBasketInfo();
+    }
+
+    private void setBasketInfo() {
+        basketConditionLabel.setText(currentClient.basket.getSelectedPositions().size()
+                + " поз. на сумму "
+                + currentClient.basket.getTotalSum()
+                + " Р");
     }
 
     private void setCatalogCB() {

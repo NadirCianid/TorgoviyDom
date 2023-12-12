@@ -3,10 +3,12 @@ package backend;
 public class Client {
     private String fio;
     private Agreement agreement;
+    public Basket basket;
 
     public Client(String fio, Agreement agreement) {
         this.fio = fio;
         this.agreement = agreement;
+        basket = new Basket();
     }
 
     public String getFio() {

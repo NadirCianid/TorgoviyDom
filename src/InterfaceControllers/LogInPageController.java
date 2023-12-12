@@ -18,9 +18,7 @@ import java.io.IOException;
 import java.util.Objects;
 import java.util.regex.Pattern;
 
-import static InterfaceControllers.StartPoint.companiesController;
-import static InterfaceControllers.StartPoint.currentClient;
-import static InterfaceControllers.StartPoint.loadNewStage;
+import static InterfaceControllers.StartPoint.*;
 
 public class LogInPageController {
     @FXML
@@ -104,26 +102,7 @@ public class LogInPageController {
         return true;
     }
 
-    private void openSecondWindow(String messageText, String messageTitle) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("..//fxmls//messagePage.fxml"));
-        Parent root = null;
-        try {
-            root = loader.load();
-        } catch (IOException e) {
-            System.out.println("Ошибка загрузки FXMLLoader");
-        }
 
-        Stage secondStage = new Stage();
-        secondStage.setTitle("Second Window");
-        secondStage.setScene(new Scene(root));
-
-        // Получение контроллера второго окна
-        MessagePageController controller = loader.getController();
-
-        controller.setMessage(messageText, messageTitle);
-
-        secondStage.show();
-    }
 
     public boolean validateFio(String inputString) {
         // Проверка допустимых символов (только буквы, пробелы и дефисы)

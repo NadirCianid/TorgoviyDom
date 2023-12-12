@@ -43,6 +43,27 @@ public class StartPoint extends Application {
         prepareNewStage(stage, fxmlLoader);
     }
 
+    public static void openSecondWindow(String messageText, String messageTitle) {
+        FXMLLoader loader = new FXMLLoader(StartPoint.class.getResource("..//fxmls//messagePage.fxml"));
+        Parent root = null;
+        try {
+            root = loader.load();
+        } catch (IOException e) {
+            System.out.println("Ошибка загрузки FXMLLoader");
+        }
+
+        Stage secondStage = new Stage();
+        secondStage.setTitle("Second Window");
+        secondStage.setScene(new Scene(root));
+
+        // Получение контроллера второго окна
+        MessagePageController controller = loader.getController();
+
+        controller.setMessage(messageText, messageTitle);
+
+        secondStage.show();
+    }
+
     public static void main(String[] args) {
         launch();
     }

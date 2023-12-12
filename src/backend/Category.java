@@ -8,6 +8,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public enum Category {
+    ALL,
     COFFEE,
     CUPS,
     MILK;

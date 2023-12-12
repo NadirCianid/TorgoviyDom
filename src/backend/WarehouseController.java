@@ -2,12 +2,9 @@ package backend;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.fxml.FXMLLoader;
-import javafx.geometry.Pos;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class WarehouseController {
     private List<Product> products = new ArrayList<>(); //Список товаров, которые хранятся на складе
@@ -21,14 +18,26 @@ public class WarehouseController {
     }
 
     public ObservableList<Product> filter(Category categoryFilter) {
+        ObservableList<Product> productObservableList =  FXCollections.observableArrayList();
+
+        if(categoryFilter.equals(Category.ALL)) {
+            productObservableList.addAll(products);
+            return productObservableList;
+        }
+
         List<Product> filteredProducts = products.stream()
                 .filter(product -> product.getCategory().equals(categoryFilter))
                 .toList();
 
-        ObservableList<Product> productObservableList =  FXCollections.observableArrayList();
         productObservableList.addAll(filteredProducts);
 
       return productObservableList;
+    }
+
+    private Product getProduct(String productName) {
+        return  products.stream()
+                .filter(product -> product.getName().equals(productName))
+                .findAny().orElse(null);
     }
 
     public ObservableList<Product> getProducts() {
@@ -36,5 +45,24 @@ public class WarehouseController {
         productObservableList.addAll(products);
 
         return productObservableList;
+    }
+
+    public void returnProduct(Position positionToBeAdded) {
+        Product product = getProduct(positionToBeAdded.getProductName());
+
+        if(product == null) {
+            products.add(new Product(positionToBeAdded.getProductName(),
+                    positionToBeAdded.getProduct().getCategory(),
+                    positionToBeAdded.getAmountInBasket(),
+                    positionToBeAdded.getProductPrice()));
+        } else {
+            product.increaseAmount(positionToBeAdded.getAmountInBasket());
+        }
+
+        positionToBeAdded = null;
+    }
+
+    public void makeOrder(Basket basket) {
+        basket = null; //Здесь должен быть код по обработке заказа, но с ним пока нечего делать. Оставим это на будущее
     }
 }

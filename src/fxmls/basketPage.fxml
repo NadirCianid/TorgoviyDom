@@ -29,7 +29,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <TableView fx:id="productsTableView" layoutX="57.0" layoutY="128.0" prefHeight="288.0" prefWidth="620.0">
+      <TableView fx:id="positionsTableView" layoutX="57.0" layoutY="128.0" prefHeight="288.0" prefWidth="620.0">
          <columns>
             <TableColumn fx:id="productNameTC" prefWidth="340.0" text="Товары и услуги" />
             <TableColumn fx:id="priceTC" prefWidth="110.0" text="Цена Р" />
@@ -37,8 +37,8 @@
             <TableColumn fx:id="amountTC" prefWidth="49.0" text="Кол-во" />
          </columns>
       </TableView>
-      <Label fx:id="clientNameLabel" layoutX="57.0" layoutY="94.0" prefHeight="17.0" prefWidth="274.0" text="Заказчик: Иванов Иван Иванович" />
-      <Label fx:id="clientCompanyLabel" layoutX="385.0" layoutY="94.0" prefHeight="17.0" prefWidth="274.0" text="Юр. лицо: ИП &quot;Варим кофе для вас&quot;" />
+      <Label fx:id="clientNameLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="57.0" layoutY="94.0" prefHeight="17.0" prefWidth="274.0" text="Заказчик: Иванов Иван Иванович" />
+      <Label fx:id="clientCompanyLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="385.0" layoutY="94.0" prefHeight="17.0" prefWidth="274.0" text="Юр. лицо: ИП &quot;Варим кофе для вас&quot;" textAlignment="CENTER" />
       <Button layoutX="151.0" layoutY="432.0" mnemonicParsing="false" onAction="#oneLess" prefHeight="30.0" prefWidth="30.0" text="-">
          <font>
             <Font name="System Bold" size="14.0" />
@@ -49,7 +49,7 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <Button layoutX="57.0" layoutY="431.0" mnemonicParsing="false" onAction="#deleteFromBusket" prefHeight="30.0" prefWidth="83.0" text="Удалить">
+      <Button layoutX="57.0" layoutY="431.0" mnemonicParsing="false" onAction="#deleteFromBasket" prefHeight="30.0" prefWidth="83.0" text="Удалить">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>

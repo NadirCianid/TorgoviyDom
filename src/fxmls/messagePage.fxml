@@ -7,7 +7,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="271.0" prefWidth="678.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="InterfaceControllers.MessagePageController">
    <children>
-      <Label fx:id="messageTitleLabel" layoutX="241.0" layoutY="23.0" text="Заголовок сообщения" textAlignment="CENTER">
+      <Label fx:id="messageTitleLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="241.0" layoutY="23.0" text="Заголовок сообщения" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>

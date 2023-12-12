@@ -1,5 +1,11 @@
 package backend;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Product {
     private String name;
     private int price;
@@ -42,5 +48,27 @@ public class Product {
                 ", amount=" + amount +
                 ", category=" + category +
                 '}';
+    }
+
+    public ObservableList<Integer> getPossibleAmounts() {
+        ObservableList<Integer> possibleAmounts = FXCollections.observableArrayList();
+        List<Integer> numberList = new ArrayList<>();
+
+        int endRange = Math.min(amount, 5);
+
+        for (int i = 1; i <= endRange; i++) {
+            numberList.add(i);
+        }
+
+        possibleAmounts.addAll(numberList);
+        return possibleAmounts;
+    }
+
+    public void decreaseAmount(int amountDiff) {
+        amount -= amountDiff;
+    }
+
+    public void increaseAmount(int amountDiff) {
+        amount += amountDiff;
     }
 }

@@ -3,6 +3,9 @@ package InterfaceControllers;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
+import static InterfaceControllers.StartPoint.currentClient;
+import static InterfaceControllers.StartPoint.warehouseController;
+
 public class CountPageController {
 
     @FXML
@@ -24,5 +27,7 @@ public class CountPageController {
     private Label totalMoneyAmountLabel;
 
     public void init() {
+
+        warehouseController.makeOrder(currentClient.basket);
     }
 }

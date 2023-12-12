@@ -45,7 +45,7 @@
             <TableColumn fx:id="priceTC" prefWidth="102.0" text="Цена Р" />
         </columns>
       </TableView>
-      <ChoiceBox fx:id="productAmountCB" layoutX="204.0" layoutY="430.0" prefHeight="30.0" prefWidth="80.0" />
+      <ChoiceBox fx:id="productAmountCB" layoutX="204.0" layoutY="430.0" onMouseClicked="#setAmountAddingVariants" prefHeight="30.0" prefWidth="80.0" />
       <Button layoutX="57.0" layoutY="430.0" mnemonicParsing="false" onAction="#addToBasket" prefHeight="30.0" prefWidth="140.0" text="Добавить в козину">
          <font>
             <Font size="14.0" />
