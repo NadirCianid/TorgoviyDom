@@ -1,8 +1,6 @@
 package InterfaceControllers;
 
-import backend.Category;
-import backend.Position;
-import backend.WarehouseController;
+import backend.model.Position;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,7 +12,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import java.io.IOException;
 import java.util.Objects;
 
-import static InterfaceControllers.StartPoint.*;
+import static InterfaceControllers.StartPoint.currentClient;
+import static InterfaceControllers.StartPoint.loadNewStage;
 
 public class BasketPageController {
     @FXML
@@ -44,7 +43,7 @@ public class BasketPageController {
     @FXML
     void deleteFromBasket(ActionEvent event) {
         Position selectedPosition = positionsTableView.getSelectionModel().getSelectedItem();
-        if(selectedPosition == null) {
+        if (selectedPosition == null) {
             StartPoint.openSecondWindow("Вы не выбрали ни одной позиции.",
                     "Необходимо выбрать позицию.");
             return;
@@ -57,7 +56,7 @@ public class BasketPageController {
     @FXML
     void oneLess(ActionEvent event) {
         Position selectedPosition = positionsTableView.getSelectionModel().getSelectedItem();
-        if(selectedPosition == null) {
+        if (selectedPosition == null) {
             StartPoint.openSecondWindow("Вы не выбрали ни одной позиции.",
                     "Необходимо выбрать позицию.");
             return;
@@ -71,7 +70,7 @@ public class BasketPageController {
     @FXML
     void oneMore(ActionEvent event) {
         Position selectedPosition = positionsTableView.getSelectionModel().getSelectedItem();
-        if(selectedPosition == null) {
+        if (selectedPosition == null) {
             StartPoint.openSecondWindow("Вы не выбрали ни одной позиции.",
                     "Необходимо выбрать позицию.");
             return;
@@ -97,11 +96,10 @@ public class BasketPageController {
     }
 
 
-
     @FXML
     void toNextPage(ActionEvent event) {
         FXMLLoader fxmlLoader = new FXMLLoader(Objects.requireNonNull(getClass().getResource("..//fxmls//countPage.fxml")));
-        if(currentClient.basket.basketIsEmpty()) {
+        if (currentClient.basket.basketIsEmpty()) {
             return;
         }
 
@@ -122,7 +120,7 @@ public class BasketPageController {
 
         fillBasketTableView();
 
-        totalLabel.setText("Итого: " +currentClient.basket.getTotalSum() + " Р");
+        totalLabel.setText("Итого: " + currentClient.basket.getTotalSum() + " Р");
     }
 
     private void fillBasketTableView() {

@@ -1,7 +1,8 @@
 package InterfaceControllers;
 
-import backend.Category;
-import backend.Product;
+import backend.model.Category;
+import backend.model.Product;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,9 +15,11 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Objects;
 
-import static InterfaceControllers.StartPoint.*;
+import static InterfaceControllers.StartPoint.currentClient;
+import static InterfaceControllers.StartPoint.loadNewStage;
 
 public class MainPageController {
     @FXML
@@ -48,7 +51,7 @@ public class MainPageController {
     void addToBasket(ActionEvent event) {
         Integer amountToBeAdded = productAmountCB.getValue();
         Product productToBeAdded = productsTableView.getSelectionModel().getSelectedItem();
-        if(amountToBeAdded == null || productToBeAdded == null) {
+        if (amountToBeAdded == null || productToBeAdded == null) {
             return;
         }
 
@@ -59,7 +62,7 @@ public class MainPageController {
     @FXML
     void toBasket(ActionEvent event) {
         FXMLLoader fxmlLoader = new FXMLLoader(Objects.requireNonNull(getClass().getResource("..//fxmls//basketPage.fxml")));
-        if(currentClient.basket.basketIsEmpty()) {
+        if (currentClient.basket.basketIsEmpty()) {
             StartPoint.openSecondWindow("Ваша корзина пуста. Добавьте хотя бы один товар, чтобы перейти в корзину.",
                     "You shall not pass!");
             return;
@@ -95,7 +98,7 @@ public class MainPageController {
     void setAmountAddingVariants(MouseEvent event) {
         Product product = productsTableView.getSelectionModel().getSelectedItem();
 
-        if(product == null) {
+        if (product == null) {
             return;
         }
 
@@ -119,7 +122,7 @@ public class MainPageController {
     private void setCatalogCB() {
         catalogCB.setItems(Category.getCategories());
         // Регистрация обработчика событий при выборе элемента в ChoiceBox
-        catalogCB.setOnAction(event ->  updatePage(event, catalogCB.getValue()));
+        catalogCB.setOnAction(event -> updatePage(event, catalogCB.getValue()));
     }
 
     private void fillProductsTableView(Category categoryToBeDisplayed) {
@@ -131,11 +134,13 @@ public class MainPageController {
         amountTC.setCellValueFactory(new PropertyValueFactory<>("amount"));
         priceTC.setCellValueFactory(new PropertyValueFactory<>("price"));
 
-        if(categoryToBeDisplayed == null) {
+        //TODO: fix filling products without selected category
+        /*if (categoryToBeDisplayed == null) {
             productsTableView.setItems(warehouseController.getProducts());
             return;
-        }
+        }*/
 
-        productsTableView.setItems(warehouseController.filter(categoryToBeDisplayed));
+        //TODO: fix filling products list productsTableView.setItems(warehouseController.filter(categoryToBeDisplayed));
+        productsTableView.setItems(FXCollections.observableList(List.of()));
     }
 }

@@ -1,6 +1,4 @@
-package backend;
-
-import static InterfaceControllers.StartPoint.warehouseController;
+package backend.model;
 
 public class Position {
     private Product product;
@@ -35,7 +33,7 @@ public class Position {
 
 
     public void addInBasket(int amountDiff) {
-        if(amountDiff > product.getAmount()) {
+        if (amountDiff > product.getAmount()) {
             return;
         }
         amountInBasket += amountDiff;
@@ -44,7 +42,7 @@ public class Position {
     }
 
     public void removeFromBasket(int amountDiff) {
-        if(amountDiff > amountInBasket) {
+        if (amountDiff > amountInBasket) {
             return;
         }
         amountInBasket -= amountDiff;

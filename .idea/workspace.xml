@@ -1,9 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="01d6dd61-daf3-4cfe-bd96-753d8ba228a9" name="Changes" comment="Настроил работу корзины">
+    <list default="true" id="01d6dd61-daf3-4cfe-bd96-753d8ba228a9" name="Changes" comment="Настроил работу чековой страницы">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/db_fill.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/db_init.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/backend/ApplicationContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/backend/DBInitException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/backend/model/Agreement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/backend/model/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/backend/repository/AgreementRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/backend/repository/ClientRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/backend/repository/DataController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/backend/service/ClientService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/backend/service/ClientValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TorgoviyDom.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TorgoviyDom.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfaceControllers/BasketPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InterfaceControllers/BasketPageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/InterfaceControllers/CountPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InterfaceControllers/CountPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfaceControllers/LogInPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InterfaceControllers/LogInPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfaceControllers/MainPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InterfaceControllers/MainPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfaceControllers/StartPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InterfaceControllers/StartPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/backend/Agreement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/backend/Basket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/model/Basket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/backend/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/model/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/backend/Client.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/backend/CompaniesController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/backend/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/model/Position.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/backend/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/backend/WarehouseController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/backend/test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fxmls/logInPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/fxmls/logInPage.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +48,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/InterfaceControllers/LogInPageController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/InterfaceControllers/StartPoint.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/backend/ApplicationContext.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/backend/model/Agreement.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/backend/model/Client.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/backend/repository/AgreementRepository.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/backend/repository/ClientRepository.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/backend/repository/DataController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/backend/service/ClientService.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/backend/service/ClientValidator.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -36,13 +75,21 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Program Files/Java/javafx-sdk-20.0.2/lib",
+    "last_opened_file_path": "C:/Users/Denis/Quasidisk_D/Politech/Nesterov/BDProjects/postgresql-42.7.3.jar",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="backend.repository" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="InterfaceControllers" />
     </key>
@@ -62,12 +109,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="backend.Main" />
+      <module name="TorgoviyDom" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="backend.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="backend.test" />
       <module name="TorgoviyDom" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="backend.*" />
+          <option name="PATTERN" value="backend.model.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -76,13 +136,15 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.test" />
+      <item itemvalue="Application.backend.Main" />
+      <item itemvalue="Application.backend.test" />
       <item itemvalue="Application.InterfaceControllers.StartPoint" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.InterfaceControllers.StartPoint" />
-        <item itemvalue="Application.test" />
+        <item itemvalue="Application.backend.Main" />
+        <item itemvalue="Application.backend.test" />
       </list>
     </recent_temporary>
   </component>
@@ -96,6 +158,7 @@
       <updated>1702326894776</updated>
       <workItem from="1702326899857" duration="4043000" />
       <workItem from="1702372141597" duration="25287000" />
+      <workItem from="1722967110646" duration="6756000" />
     </task>
     <task id="LOCAL-00001" summary="Создал проект, и скелет интерфейса.">
       <created>1702372682555</created>

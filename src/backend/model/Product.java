@@ -1,4 +1,4 @@
-package backend;
+package backend.model;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

@@ -1,15 +1,11 @@
-package backend;
+package backend.model;
 
-import InterfaceControllers.StartPoint;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.geometry.Pos;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
-
-import static InterfaceControllers.StartPoint.currentClient;
 
 public class Basket {
     private List<Position> selectedPositions = new ArrayList<>();
@@ -71,6 +67,8 @@ public class Basket {
 
     public void dropPosition(Position positionToBeDropped) {
         selectedPositions.remove(positionToBeDropped);
-        StartPoint.warehouseController.returnProduct(positionToBeDropped);
+
+
+        //TODO: fix drop position StartPoint.warehouseController.returnProduct(positionToBeDropped);
     }
 }

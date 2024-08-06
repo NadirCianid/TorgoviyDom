@@ -40,11 +40,31 @@
             <TextField fx:id="agreementNumberTF" prefHeight="25.0" prefWidth="234.0" promptText="АБ1234567891234567" />
          </children>
       </HBox>
-      <Button fx:id="nextPageButton" disable="true" layoutX="296.0" layoutY="355.0" mnemonicParsing="false" onAction="#nextPage" text="Продолжить">
+      <HBox alignment="CENTER" layoutX="156.0" layoutY="255.0" prefHeight="36.0" prefWidth="410.0" spacing="20.0">
+         <children>
+            <Label prefHeight="20.0" prefWidth="200.0" text="Введите номер телефона:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="phoneNumberTF" prefHeight="25.0" prefWidth="234.0" promptText="+7 ХХХ ХХХ ХХ ХХ" />
+         </children>
+      </HBox>
+      <Button fx:id="nextPageButton" disable="true" layoutX="297.0" layoutY="408.0" mnemonicParsing="false" onAction="#nextPage" text="Продолжить">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <CheckBox fx:id="importantCheckBox" layoutX="155.0" layoutY="258.0" mnemonicParsing="false" onAction="#acceptEverything" text="Продолжая я подтверждаю, что являюсь работником данного юр. лица." />
+      <CheckBox fx:id="importantCheckBox" layoutX="150.0" layoutY="385.0" mnemonicParsing="false" onAction="#acceptEverything" text="Продолжая я подтверждаю, что являюсь работником данного юр. лица." />
+      <HBox alignment="CENTER" layoutX="155.0" layoutY="300.0" prefHeight="36.0" prefWidth="410.0" spacing="20.0">
+         <children>
+            <Label prefHeight="20.0" prefWidth="200.0" text="Введите свою почту:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="emailTF" prefHeight="25.0" prefWidth="234.0" promptText="myemail@mail.com" />
+         </children>
+      </HBox>
    </children>
 </AnchorPane>

@@ -7,7 +7,6 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 import static InterfaceControllers.StartPoint.currentClient;
-import static InterfaceControllers.StartPoint.warehouseController;
 
 public class CountPageController {
 
@@ -37,6 +36,6 @@ public class CountPageController {
         totalMoneyAmountLabel.setText("Итого к оплате:  " + currentClient.basket.getTotalSum() + " P.");
         dateLabel.setText("Дата заказа: " + LocalDate.now().format(DateTimeFormatter.ISO_DATE));
 
-        warehouseController.makeOrder(currentClient.basket);
+        //TODO: fix making order warehouseController.makeOrder(currentClient.basket);
     }
 }
