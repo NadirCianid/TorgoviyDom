@@ -1,14 +1,16 @@
 package backend.model;
 
+import java.math.BigDecimal;
+
 public class Position {
     private Product product;
     private int amountInBasket;
-    private int cost;
+    private BigDecimal cost;
 
     public Position(Product product, int amountInBasket) {
         this.product = product;
         this.amountInBasket = amountInBasket;
-        cost = product.getPrice() * amountInBasket;
+        cost = product.getPrice().multiply(BigDecimal.valueOf(amountInBasket));
     }
 
     public Product getProduct() {
@@ -19,11 +21,11 @@ public class Position {
         return amountInBasket;
     }
 
-    public int getPositionCost() {
+    public BigDecimal getPositionCost() {
         return cost;
     }
 
-    public int getProductPrice() {
+    public BigDecimal getProductPrice() {
         return product.getPrice();
     }
 
@@ -37,7 +39,7 @@ public class Position {
             return;
         }
         amountInBasket += amountDiff;
-        cost = product.getPrice() * amountInBasket;
+        cost = product.getPrice().multiply(BigDecimal.valueOf(amountInBasket));
         product.decreaseAmount(amountDiff);
     }
 
@@ -46,7 +48,7 @@ public class Position {
             return;
         }
         amountInBasket -= amountDiff;
-        cost = product.getPrice() * amountInBasket;
+        cost = product.getPrice().multiply(BigDecimal.valueOf(amountInBasket));
         product.increaseAmount(amountDiff);
     }
 }

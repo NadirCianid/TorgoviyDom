@@ -3,17 +3,20 @@ package backend.model;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Product {
+    private Long Id;
     private String name;
-    private int price;
+    private String description;
+    private BigDecimal price;
     private int amount;
 
     private Category category;
 
-    public Product(String name, Category category, int amount, int price) {
+    public Product(Long id, String name, String description, BigDecimal price,  Category category, int amount) {
         this.name = name;
         this.price = price;
         this.category = category;
@@ -32,7 +35,7 @@ public class Product {
         return name;
     }
 
-    public int getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 

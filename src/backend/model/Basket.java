@@ -3,6 +3,7 @@ package backend.model;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -55,10 +56,10 @@ public class Basket {
         return positionObservableList;
     }
 
-    public int getTotalSum() {
-        AtomicInteger totalSum = new AtomicInteger(0);
-        selectedPositions.forEach(position -> totalSum.addAndGet(position.getPositionCost()));
-        return  totalSum.get();
+    public BigDecimal getTotalSum() {
+        final BigDecimal[] totalSum = {BigDecimal.ZERO};
+        selectedPositions.forEach(position -> totalSum[0] = totalSum[0].add(position.getPositionCost()));
+        return  totalSum[0];
     }
 
     public boolean basketIsEmpty() {

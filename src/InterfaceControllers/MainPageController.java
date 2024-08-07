@@ -4,6 +4,7 @@ import backend.model.Category;
 import backend.model.Product;
 import backend.service.CategoryService;
 import backend.service.ClientService;
+import backend.service.ProductService;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -26,6 +27,8 @@ import static InterfaceControllers.StartPoint.currentClient;
 import static InterfaceControllers.StartPoint.loadNewStage;
 
 public class MainPageController {
+    private ProductService productService;
+
     @FXML
     private TableColumn<Product, Integer> amountTC;
 
@@ -111,6 +114,8 @@ public class MainPageController {
     }
 
     public void init(Category categoryToBeDisplayed) {
+        productService = applicationContext.getProductService();
+
         fillProductsTableView(categoryToBeDisplayed);
         setCatalogCB();
         setBasketInfo();
@@ -140,13 +145,11 @@ public class MainPageController {
         amountTC.setCellValueFactory(new PropertyValueFactory<>("amount"));
         priceTC.setCellValueFactory(new PropertyValueFactory<>("price"));
 
-        //TODO: fix filling products without selected category
-        /*if (categoryToBeDisplayed == null) {
-            productsTableView.setItems(warehouseController.getProducts());
+        if (categoryToBeDisplayed == null) {
+            productsTableView.setItems(productService.getProducts());
             return;
-        }*/
+        }
 
-        //TODO: fix filling products list productsTableView.setItems(warehouseController.filter(categoryToBeDisplayed));
-        productsTableView.setItems(FXCollections.observableList(List.of()));
+        productsTableView.setItems(productService.getProducts(categoryToBeDisplayed));
     }
 }
