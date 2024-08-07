@@ -1,20 +1,26 @@
 package backend.model;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+public class Category {
 
-import java.util.Arrays;
+    private final Long id;
+    private final String name;
 
-public enum Category {
-    ALL,
-    COFFEE,
-    CUPS,
-    MILK;
+    public Category(Long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 
-    public static ObservableList<Category> getCategories() {
-        ObservableList<Category> categories = FXCollections.observableArrayList();
-        categories.addAll(Arrays.asList(Category.values()));
+    public Long getId() {
+        return id;
+    }
 
-        return  categories;
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public String toString() {
+        return name;
     }
 }
+

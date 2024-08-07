@@ -2,12 +2,15 @@ package InterfaceControllers;
 
 import backend.model.Category;
 import backend.model.Product;
+import backend.service.CategoryService;
+import backend.service.ClientService;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -18,6 +21,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
 
+import static InterfaceControllers.StartPoint.applicationContext;
 import static InterfaceControllers.StartPoint.currentClient;
 import static InterfaceControllers.StartPoint.loadNewStage;
 
@@ -29,7 +33,7 @@ public class MainPageController {
     private Label basketConditionLabel;
 
     @FXML
-    private ChoiceBox<Category> catalogCB;
+    private ComboBox<Category> catalogCB;
 
     @FXML
     private TableColumn<Product, String> nameTC;
@@ -120,7 +124,9 @@ public class MainPageController {
     }
 
     private void setCatalogCB() {
-        catalogCB.setItems(Category.getCategories());
+        CategoryService categoryService = applicationContext.getCategoryService();
+
+        catalogCB.setItems(categoryService.getCategories());
         // Регистрация обработчика событий при выборе элемента в ChoiceBox
         catalogCB.setOnAction(event -> updatePage(event, catalogCB.getValue()));
     }
