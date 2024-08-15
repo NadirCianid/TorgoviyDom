@@ -2,15 +2,21 @@ package backend.service;
 
 import backend.model.Category;
 import backend.model.Product;
+import backend.model.Warehouse;
 import backend.repository.ProductRepository;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import java.util.List;
+import java.util.Map;
+
 public class ProductService {
     private final ProductRepository productRepository;
+    private final WarehouseService warehouseService;
 
-    public ProductService(ProductRepository productRepository) {
+    public ProductService(ProductRepository productRepository, WarehouseService warehouseService) {
         this.productRepository = productRepository;
+        this.warehouseService = warehouseService;
     }
 
     public ObservableList<Product> getProducts() {
@@ -28,4 +34,11 @@ public class ProductService {
 
         return products;
     }
+
+    public void decreaseProductAmount(Product currentProduct, int amountDiff) {
+        List<Warehouse> warehouseList = warehouseService.getWarehousesStoringProduct(currentProduct);
+        warehouseService.writeOffProduct(currentProduct.getId(), amountDiff, warehouseList);
+    }
+
+
 }

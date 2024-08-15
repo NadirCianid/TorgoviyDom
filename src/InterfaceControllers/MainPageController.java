@@ -115,6 +115,7 @@ public class MainPageController {
 
     public void init(Category categoryToBeDisplayed) {
         productService = applicationContext.getProductService();
+        currentClient.basket.setProductService(productService);
 
         fillProductsTableView(categoryToBeDisplayed);
         setCatalogCB();

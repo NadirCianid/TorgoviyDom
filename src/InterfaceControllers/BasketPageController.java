@@ -62,7 +62,7 @@ public class BasketPageController {
             return;
         }
 
-        selectedPosition.removeFromBasket(1);
+        currentClient.basket.addProductInBasket(selectedPosition.getProduct(), -1);
 
         updatePage(event);
     }
@@ -76,7 +76,7 @@ public class BasketPageController {
             return;
         }
 
-        selectedPosition.addInBasket(1);
+        currentClient.basket.addProductInBasket(selectedPosition.getProduct(), 1);
 
         updatePage(event);
     }

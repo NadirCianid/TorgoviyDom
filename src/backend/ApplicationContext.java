@@ -5,30 +5,38 @@ import backend.repository.CategoryRepository;
 import backend.repository.ClientRepository;
 import backend.repository.DataController;
 import backend.repository.ProductRepository;
+import backend.repository.WarehouseRepository;
 import backend.service.CategoryService;
 import backend.service.ClientService;
 import backend.service.ClientValidator;
 import backend.service.ProductService;
-
-import java.sql.SQLException;
+import backend.service.WarehouseService;
 
 public class ApplicationContext {
     private DataController dataController;
     private ClientService clientService;
     private CategoryService categoryService;
     private ProductService productService;
+    private WarehouseService warehouseService;
 
     public ApplicationContext() throws DBInitException {
         initDataController();
         initClientService();
         initCategoryService();
+        initWarehouseService();
         initProductService();
+    }
+
+    private void initWarehouseService() {
+        WarehouseRepository warehouseRepository = new WarehouseRepository(dataController.getConn());
+
+        warehouseService = new WarehouseService(warehouseRepository);
     }
 
     private void initProductService() {
         ProductRepository productRepository = new ProductRepository(dataController.getConn());
 
-        productService = new ProductService(productRepository);
+        productService = new ProductService(productRepository, warehouseService);
     }
 
     private void initCategoryService() {

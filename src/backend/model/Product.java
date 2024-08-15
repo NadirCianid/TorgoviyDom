@@ -6,9 +6,10 @@ import javafx.collections.ObservableList;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Product {
-    private Long Id;
+    private Long id;
     private String name;
     private String description;
     private BigDecimal price;
@@ -17,6 +18,7 @@ public class Product {
     private Category category;
 
     public Product(Long id, String name, String description, BigDecimal price,  Category category, int amount) {
+        this.id = id;
         this.name = name;
         this.price = price;
         this.category = category;
@@ -25,6 +27,10 @@ public class Product {
 
     public void takeFromWarehouse(int amountDiff) {
         amount -= amountDiff;
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public Category getCategory() {
@@ -73,5 +79,17 @@ public class Product {
 
     public void increaseAmount(int amountDiff) {
         amount += amountDiff;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Product product)) return false;
+        return id.equals(product.id) && name.equals(product.name) && price.equals(product.price) && category.equals(product.category);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, price, category);
     }
 }

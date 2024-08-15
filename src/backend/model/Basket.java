@@ -1,5 +1,8 @@
 package backend.model;
 
+import backend.ApplicationContext;
+import backend.repository.ProductRepository;
+import backend.service.ProductService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -9,6 +12,7 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Basket {
+    private ProductService productService;
     private List<Position> selectedPositions = new ArrayList<>();
 
     public boolean addProductInBasket(Product currentProduct, int amountDiff) {
@@ -20,7 +24,8 @@ public class Basket {
                 .filter(position -> position.getProduct().equals(currentProduct))
                 .findAny()
                 .orElse(null);
-        //currentProduct.decreaseAmount(amountDiff);
+
+        productService.decreaseProductAmount(currentProduct, amountDiff);
 
         if(positionToBeIncreased == null) {
             Position newPosition = new Position(currentProduct, 0);
@@ -71,5 +76,9 @@ public class Basket {
 
 
         //TODO: fix drop position StartPoint.warehouseController.returnProduct(positionToBeDropped);
+    }
+
+    public void setProductService(ProductService productService) {
+        this.productService = productService;
     }
 }
