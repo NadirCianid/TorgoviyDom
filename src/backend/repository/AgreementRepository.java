@@ -1,6 +1,6 @@
 package backend.repository;
 
-import backend.model.Agreement;
+import backend.model.client.Agreement;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

@@ -1,6 +1,6 @@
 package backend.service;
 
-import backend.model.Category;
+import backend.model.product.Category;
 import backend.repository.CategoryRepository;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

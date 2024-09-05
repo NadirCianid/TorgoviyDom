@@ -1,14 +1,16 @@
 package backend.repository;
 
-import backend.model.Category;
-import backend.model.Product;
+import backend.model.order.Order;
+import backend.model.order.OrderItem;
+import backend.model.product.Product;
 import backend.model.Warehouse;
 
-import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -115,6 +117,49 @@ public class WarehouseRepository {
         } catch (SQLException e) {
             openSecondWindow("Ошибка при сохранении продуктов: " + e.getMessage(), "Ошибка сервера.");
             e.printStackTrace();
+        }
+    }
+
+    public void saveOrder(Order order) throws SQLException {
+        String orderInsertQuery = "INSERT INTO \"order\" (client, status_id, address) VALUES (?, ?, ?)";
+        String orderItemsInsertQuery = "INSERT INTO order_items (order_id, product_id, quantity) VALUES (?, ?, ?)";
+
+        try {
+            // Begin transaction
+            conn.setAutoCommit(false);
+
+            // Insert order data
+            try (PreparedStatement orderStatement = conn.prepareStatement(orderInsertQuery, Statement.RETURN_GENERATED_KEYS)) {
+                orderStatement.setLong(1, order.getClient().getId());
+                orderStatement.setInt(2, order.getStatus().getId());
+                orderStatement.setString(3, order.getAddress());
+
+                orderStatement.executeUpdate();
+
+                // Retrieve the generated order ID
+                ResultSet generatedKeys = orderStatement.getGeneratedKeys();
+                if (generatedKeys.next()) {
+                    long orderId = generatedKeys.getLong(1);
+
+                    // Insert order items
+                    try (PreparedStatement orderItemsStatement = conn.prepareStatement(orderItemsInsertQuery)) {
+                        for (OrderItem item : order.getOrderItems()) {
+                            orderItemsStatement.setLong(1, orderId);
+                            orderItemsStatement.setLong(2, item.getProduct().getId());
+                            orderItemsStatement.setInt(3, item.getQuantity());
+                            orderItemsStatement.addBatch();
+                        }
+                        orderItemsStatement.executeBatch();
+                    }
+                }
+            }
+
+            conn.commit();
+        } catch (SQLException e) {
+            conn.rollback();
+            throw e;
+        } finally {
+            conn.setAutoCommit(true);
         }
     }
 }

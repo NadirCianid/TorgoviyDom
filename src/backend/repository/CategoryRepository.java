@@ -1,6 +1,6 @@
 package backend.repository;
 
-import backend.model.Category;
+import backend.model.product.Category;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

@@ -67,4 +67,8 @@ public class ApplicationContext {
     }
 
     public ProductService getProductService() {return productService;}
+
+    public WarehouseService getWarehouseService() {
+        return warehouseService;
+    }
 }

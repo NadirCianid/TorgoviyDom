@@ -1,9 +1,16 @@
 package backend.service;
 
-import backend.model.Product;
+import backend.model.basket.Position;
+import backend.model.client.Client;
+import backend.model.order.Order;
+import backend.model.order.OrderItem;
+import backend.model.order.Status;
+import backend.model.product.Product;
 import backend.model.Warehouse;
 import backend.repository.WarehouseRepository;
 
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -50,5 +57,27 @@ public class WarehouseService {
         }
 
         warehouseRepository.saveAllStorages(warehouseList);
+    }
+
+    public Order createOrder(List<Position> selectedPositions, Client client) {
+        // Step 1: Create a new Order instance
+        Order newOrder = new Order(client, Status.PENDING, client.getAgreement().companyAddress());
+
+        // Step 2: Create the order items list
+        var orderItems = selectedPositions.stream()
+                .map( position -> new OrderItem(newOrder, position.getProduct(), position.getAmountInBasket()))
+                .toList();
+
+        newOrder.setOrderItems(orderItems);
+
+        // Returning the newly created order
+        try {
+            warehouseRepository.saveOrder(newOrder);
+            return newOrder;
+        } catch (SQLException e) {
+            openSecondWindow("Ошибка при сохранении продуктов: " + e.getMessage(), "Ошибка сервера.");
+            e.printStackTrace();
+            return null;
+        }
     }
 }

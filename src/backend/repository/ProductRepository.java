@@ -1,7 +1,7 @@
 package backend.repository;
 
-import backend.model.Category;
-import backend.model.Product;
+import backend.model.product.Category;
+import backend.model.product.Product;
 
 import java.math.BigDecimal;
 import java.sql.Connection;

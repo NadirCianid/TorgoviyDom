@@ -1,4 +1,6 @@
-package backend.model;
+package backend.model.client;
+
+import backend.model.basket.Basket;
 
 public class Client {
     private final Long id;
@@ -17,6 +19,10 @@ public class Client {
         this.email = email;
 
         basket = new Basket();
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public String getFio() {

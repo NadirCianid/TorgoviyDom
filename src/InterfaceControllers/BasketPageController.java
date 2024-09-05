@@ -1,6 +1,6 @@
 package InterfaceControllers;
 
-import backend.model.Position;
+import backend.model.basket.Position;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -111,12 +111,11 @@ public class BasketPageController {
 
         CountPageController countPageController = fxmlLoader.getController();
         countPageController.init();
-
     }
 
     public void init() {
         clientNameLabel.setText(currentClient.getFio());
-        clientCompanyLabel.setText(currentClient.getAgreement().getCompanyName());
+        clientCompanyLabel.setText(currentClient.getAgreement().companyName());
 
         fillBasketTableView();
 

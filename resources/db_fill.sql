@@ -66,19 +66,31 @@ VALUES (1, 1, 100),
        (2, 15, 60),
        (2, 16, 70);
 
-INSERT INTO status (name)
-VALUES ('Pending'),
-       ('Processing'),
-       ('Shipped'), --The order has been dispatched and is en route to the customer.
-       ('Delivered'),--The order has been received by the customer.
-       ('Cancelled');
+INSERT INTO status (id, name)
+VALUES (1, 'Pending'),
+       (2, 'Processing'),
+       (3, 'Shipped'),
+       (4, 'Delivered'),
+       (5, 'Cancelled');
 
-INSERT INTO "order" (product, client, amount, address, status_id)
-VALUES (1, 1, 2, '123 Coffee St, Beansville', 1),
-       (3, 2, 1, '456 Java Rd, Roast City', 2),
-       (5, 3, 4, '789 Brew Blvd, Aroma Town', 3),
-       (7, 4, 2, '321 Espresso Ave, Grind City', 4),
-       (9, 5, 1, '654 Latte Ln, Mocha City', 5),
-       (11, 6, 2, '101 Caffeine St, Roast City', 1),
-       (13, 1, 1, '202 Coffee Way, Bean City', 2),
-       (15, 2, 3, '303 Caffeine Rd, Roastville', 3);
+INSERT INTO "order" (client, address, status_id)
+VALUES
+    (1, '123 Coffee St, Beansville', 1),
+    (2, '456 Java Rd, Roast City', 2),
+    (3, '789 Brew Blvd, Aroma Town', 3),
+    (4, '321 Espresso Ave, Grind City', 4),
+    (5, '654 Latte Ln, Mocha City', 5),
+    (6, '101 Caffeine St, Roast City', 1),
+    (1, '202 Coffee Way, Bean City', 2),
+    (2, '303 Caffeine Rd, Roastville', 3);
+
+INSERT INTO order_items (order_id, product_id, quantity)
+VALUES
+    (1, 1, 2),  -- Order 1, Product 1, Quantity 2
+    (2, 3, 1),  -- Order 2, Product 3, Quantity 1
+    (3, 5, 4),  -- Order 3, Product 5, Quantity 4
+    (4, 7, 2),  -- Order 4, Product 7, Quantity 2
+    (5, 9, 1),  -- Order 5, Product 9, Quantity 1
+    (6, 11, 2), -- Order 6, Product 11, Quantity 2
+    (7, 13, 1), -- Order 7, Product 13, Quantity 1
+    (8, 15, 3); -- Order 8, Product 15, Quantity 3

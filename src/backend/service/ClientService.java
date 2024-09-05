@@ -1,7 +1,7 @@
 package backend.service;
 
-import backend.model.Agreement;
-import backend.model.Client;
+import backend.model.client.Agreement;
+import backend.model.client.Client;
 import backend.repository.AgreementRepository;
 import backend.repository.ClientRepository;
 

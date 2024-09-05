@@ -1,9 +1,11 @@
-package backend.model;
+package backend.model.basket;
+
+import backend.model.product.Product;
 
 import java.math.BigDecimal;
 
 public class Position {
-    private Product product;
+    private final Product product;
     private int amountInBasket;
     private BigDecimal cost;
 

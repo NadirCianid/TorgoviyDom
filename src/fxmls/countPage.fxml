@@ -17,7 +17,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <VBox alignment="CENTER" layoutX="76.0" layoutY="127.0" prefHeight="310.0" prefWidth="569.0" spacing="2.0">
+      <VBox alignment="CENTER" layoutX="76.0" layoutY="102.0" prefHeight="335.0" prefWidth="569.0" spacing="2.0">
          <children>
             <Label text="Ваш заказ принят и отправлен на сборку." />
             <Label text="************************************************" />
@@ -27,11 +27,12 @@
             <Label text="Информация о заказе:" />
             <Label fx:id="clientNameLabel" text="Заказчик: Иванов Иван Иванович" />
             <Label fx:id="clientCompanyLabel" text="Компания: ИП &quot;Варим кофе для вас&quot;" />
-            <Label fx:id="agreementNumberLabel" text="Номер договора:  АВ1234567891234567" />
+            <Label fx:id="agreementNumberLabel" text="Адрес доставки:  Ул. Строителей д. 16" />
             <Label />
             <Label fx:id="positionCountLabel" text="Позиций в заказе: 100 шт" />
             <Label fx:id="totalMoneyAmountLabel" text="Итого к оплате: 10_000_000 Р" />
             <Label fx:id="dateLabel" text="Дата заказа: 12.12.2023" />
+            <Label fx:id="orderStatus" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="164.0" text="Статус заказа: Pending" textAlignment="CENTER" />
             <Label text="************************************************" />
             <Label text="Спасибо за выбор нашей компании!" />
          </children>

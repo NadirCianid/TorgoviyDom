@@ -1,11 +1,9 @@
 package InterfaceControllers;
 
-import backend.model.Category;
-import backend.model.Product;
+import backend.model.product.Category;
+import backend.model.product.Product;
 import backend.service.CategoryService;
-import backend.service.ClientService;
 import backend.service.ProductService;
-import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,7 +17,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
-import java.util.List;
 import java.util.Objects;
 
 import static InterfaceControllers.StartPoint.applicationContext;

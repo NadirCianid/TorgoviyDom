@@ -1,7 +1,7 @@
 package backend.repository;
 
-import backend.model.Agreement;
-import backend.model.Client;
+import backend.model.client.Agreement;
+import backend.model.client.Client;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -74,7 +74,7 @@ public class ClientRepository {
 
         try (PreparedStatement insertStmt = conn.prepareStatement(insertQuery)) {
             insertStmt.setString(1, client.getFio());
-            insertStmt.setInt(2, client.getAgreement().getId());
+            insertStmt.setInt(2, client.getAgreement().id());
             insertStmt.setString(3, client.getPhoneNumber());
             insertStmt.setString(4, client.getEmail());
 

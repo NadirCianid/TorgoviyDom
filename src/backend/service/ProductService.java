@@ -1,14 +1,13 @@
 package backend.service;
 
-import backend.model.Category;
-import backend.model.Product;
+import backend.model.product.Category;
+import backend.model.product.Product;
 import backend.model.Warehouse;
 import backend.repository.ProductRepository;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.util.List;
-import java.util.Map;
 
 public class ProductService {
     private final ProductRepository productRepository;

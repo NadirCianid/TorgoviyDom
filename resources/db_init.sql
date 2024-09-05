@@ -51,19 +51,26 @@ CREATE TABLE warehouse_product
 
 CREATE TABLE status
 (
-    id   SERIAL PRIMARY KEY,
+    id   int PRIMARY KEY,
     name VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE "order"
 (
     id          SERIAL PRIMARY KEY,
-    product     INT REFERENCES product (id),
     client      INT REFERENCES client (id),
     status_id   INT REFERENCES status (id),
-    amount      INT NOT NULL,
     address     VARCHAR(200),
     created_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+CREATE TABLE order_items
+(
+    id         SERIAL PRIMARY KEY,
+    order_id   INT REFERENCES "order" (id),
+    product_id INT REFERENCES product (id),
+    quantity   INT NOT NULL
+);
+
 

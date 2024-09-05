@@ -1,7 +1,6 @@
-package backend.model;
+package backend.model.basket;
 
-import backend.ApplicationContext;
-import backend.repository.ProductRepository;
+import backend.model.product.Product;
 import backend.service.ProductService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -9,11 +8,10 @@ import javafx.collections.ObservableList;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class Basket {
     private ProductService productService;
-    private List<Position> selectedPositions = new ArrayList<>();
+    private final List<Position> selectedPositions = new ArrayList<>();
 
     public boolean addProductInBasket(Product currentProduct, int amountDiff) {
         if(amountDiff > currentProduct.getAmount()) {
@@ -40,21 +38,6 @@ public class Basket {
         return true;
     }
 
-    public boolean removeProductInBasket(Product currentProduct, int amountDiff) {
-        Position positionToBeDecreased =  selectedPositions.stream()
-                .filter(position -> position.getProduct().equals(currentProduct))
-                .findAny()
-                .orElse(null);
-
-        if(positionToBeDecreased == null) {
-            return false;
-        }
-
-        positionToBeDecreased.removeFromBasket(amountDiff);
-        currentProduct.decreaseAmount(amountDiff);
-        return true;
-    }
-
     public ObservableList<Position> getSelectedPositions() {
         ObservableList<Position> positionObservableList = FXCollections.observableArrayList();
         positionObservableList.addAll(selectedPositions);
@@ -74,8 +57,7 @@ public class Basket {
     public void dropPosition(Position positionToBeDropped) {
         selectedPositions.remove(positionToBeDropped);
 
-
-        //TODO: fix drop position StartPoint.warehouseController.returnProduct(positionToBeDropped);
+        productService.decreaseProductAmount(positionToBeDropped.getProduct(), -positionToBeDropped.getAmountInBasket());
     }
 
     public void setProductService(ProductService productService) {

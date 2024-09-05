@@ -2,7 +2,7 @@ package InterfaceControllers;
 
 import backend.ApplicationContext;
 import backend.DBInitException;
-import backend.model.Client;
+import backend.model.client.Client;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
